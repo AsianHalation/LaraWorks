@@ -18,9 +18,18 @@ $planets = [
         'description' => 'Jupiter is a gas giant and doesn\'t have a solid surface, but it may have a solid inner core about the size of Earth.'
     ],
 ];
+
+if(request()->has('planet')) {
+    $planet  = request('planet');
+    $planet = ucfirst($planet);
+    $collection = collect($planets);
+    $collection->where('name', $planet);
+}
+
 ?>
 
-@foreach ($planets as $planet)
+@foreach ($planets as $planet) 
    <h1>{{$planet['name']}}</h1>
-   <p>{{$planet['description']}}</p>
+   <p>{{$planet['description']}}</p> 
 @endforeach
+
