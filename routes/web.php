@@ -20,3 +20,7 @@ Route::get('/', function () {
 Route::get('/planets', function () {
     return view('planets');
 });
+
+Route::get('/planets', [PlanetController::class, 'index']);
+
+Route::get('/planets/{name}', [PlanetController::class, 'show']);
