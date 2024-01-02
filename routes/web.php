@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Route::get('/planets', function () {
+Route::get('/planetenasdfasdfasdfasdf', function () {
     return view('planets');
 });
 
